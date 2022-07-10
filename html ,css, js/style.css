@@ -1,0 +1,21 @@
+
+body{
+  background: #489196;
+}
+
+
+
+#first_form{
+  color: orange;
+  margin-left: 40%;
+}
+
+
+.par{
+  margin-top: 10px;
+}
+
+.letter{
+  display:inline;
+  font-size: 26px;
+}
