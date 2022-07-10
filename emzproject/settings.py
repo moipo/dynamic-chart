@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-k007u^v7@z)+&8)@ki@y9615nt-q8e-8%h7)%+ugx&e^l^!lfs'
+SECRET_KEY = 'django-insecure-k007u^v7@z)+&8)@ksdfsi@y9615nt-q8e-8%ha7)%+ugx&e^l^!lfs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'anapp',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'emzproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates/anapp/'], # на линуксе заработать не должно
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

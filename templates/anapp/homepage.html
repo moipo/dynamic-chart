@@ -1,15 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel = "stylesheet" href=style.css>
-    <script type="text/javascript" src = "jquery-3.6.0.js"></script>
-
-
-
+    <link rel = "stylesheet" href="{% static 'anapp/css/style.css' %}">
+    <script type="text/javascript" src = "{% static 'anapp/js/jquery-3.6.0.js' %}"></script>
     </script>
     <title>To Do List</title>
-      <script type="text/javascript" src="scripts.js"></script>
+      <script type="text/javascript" src="{% static 'anapp/js/scripts.js' %}"></script>
   </head>
   <body>
     <form  action="." id = "first_form" method = "POST">
