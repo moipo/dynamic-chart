@@ -1,5 +1,5 @@
  //$('body').append('<a ref="http://google.com">Перейти в гугл</a>');
-jQuery("document").ready(function(){ // юзать ток когда док готов
+jQuery("document").ready(function(){ //
 //  $('body').append('<a href="http://google.com">Перейти в гугл</a>');
   //$('p').remove();
 //  var a;
@@ -182,6 +182,33 @@ jQuery("document").ready(function(){ // юзать ток когда док го
       $("#slv5").html(p);
 
 
+
+      // document.getElementById("first_form").submit();
+      // document.getElementTagName("first_form").submit();
+      // document.getElementById("#first_form").submit();
+      // document.getElementTagName("#first_form").submit();
+      // document.form.submit()
+      // document.getElementById("first_form").submit();
+      // document.getElementById("hiddenbutton").click();
+      // document.getElementById("#hiddenbutton").click();
+      // this.form.submit();
+      // $('input[type=submit]').hide();
+      //
+      //
+      // const first_form = document.ElementById("first_form");
+      // myForm.addEventListener("change", function(){
+      //   document.getElementById("first_form").submit();
+      //   document.getElementTagName("first_form").submit();
+      //   document.getElementById("#first_form").submit();
+      //   document.getElementTagName("#first_form").submit();
+      //   document.form.submit()
+      //   document.getElementById("first_form").submit();
+      //   document.getElementById("hiddenbutton").click();
+      //   document.getElementById("#hiddenbutton").click();
+      //   this.form.submit();
+      // });
+
+
       ctx.beginPath();
       ctx.fillStyle = '#9ebaa4'; // ничего
       ctx.fillRect(0, 0, canvasPlotWidth, canvasPlotHeight);
@@ -259,6 +286,37 @@ jQuery("document").ready(function(){ // юзать ток когда док го
 
 
     })
+
+
+
+
+
+
+
+    //
+    // const first_form = document.ElementById("first_form");
+    // myForm.addEventListener("change", function(){
+    //   document.getElementById("first_form").submit();
+    //   document.getElementTagName("first_form").submit();
+    //   document.getElementById("#first_form").submit();
+    //   document.getElementTagName("#first_form").submit();
+    //   document.form.submit()
+    //   document.getElementById("first_form").submit();
+    //   document.getElementById("hiddenbutton").click();
+    //   document.getElementById("#hiddenbutton").click();
+    //   this.form.submit();
+    // });
+    //
+
+
+
+
+
+
+
+
+
+
 
 
 });     //
