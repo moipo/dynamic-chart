@@ -13,6 +13,7 @@ body{
 
 .par{
   margin-top: 10px;
+  width: 300px;
 }
 
 .letter{
@@ -22,7 +23,6 @@ body{
 
 
 #table1{
-  margin-left: 40%;
   color:white;
   border:3px solid #020FFA;
   background-color:#20ED09;

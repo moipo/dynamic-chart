@@ -1,5 +1,17 @@
  //$('body').append('<a ref="http://google.com">Перейти в гугл</a>');
 jQuery("document").ready(function(){ //
+  var k1 = 0;
+  var l1 = 0;
+  var m1 = 0;
+  var n1 = 0;
+  var p1 = 0;
+
+  var k2;
+  var l2;
+  var m2;
+  var n2;
+  var p2;
+
 //  $('body').append('<a href="http://google.com">Перейти в гугл</a>');
   //$('p').remove();
 //  var a;
@@ -151,8 +163,7 @@ jQuery("document").ready(function(){ //
   //   ctx.fillRect(x*scaleX + xAxis, yAxis - scaleY * y, 4, 4);
   // }
 
-
-    $(".par").on("change",function(){
+    $(".par").on("change",async function(){
 
 
     //    ctx.fillStyle = "#9ebaa4"; // цвет внутри форм
@@ -162,24 +173,55 @@ jQuery("document").ready(function(){ //
     //  ctx.closePath();
     //  document.getElementById("canvas_plot").style.property.background = "#000000";
 
+      k2 = Number($(".one").val());
+      $("#slv1").html(k2);
+
+      l2 = Number($(".two").val());
+      $("#slv2").html(l2);
+
+      m2 = Number($(".three").val());
+      $("#slv3").html(m2);
+
+      n2= Number($(".four").val());
+      $("#slv4").html(n2);
+
+      p2 = Number($(".five").val());
+      $("#slv5").html(p2);
+
+
+
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      function compare_and_change_locally(a,b)
+      {
+        if (a < b)
+        {
+            a += 1
+        }
+        else if (a > b)
+        {
+          a -= 1;
+        }
+        return a;
+      }
+
+    function foo(k1_f,l1_f,m1_f,n1_f,p1_f,k2,l2,m2,n2,p2)
+    {
+      k1 = compare_and_change_locally(k1_f,k2);
+      l1 = compare_and_change_locally(l1_f,l2);
+      m1 = compare_and_change_locally(m1_f,m2);
+      n1 = compare_and_change_locally(n1_f,n2);
+      p1 = compare_and_change_locally(p1_f,p2);
+    }
+
+    for (let i = 0; i < 100+1; i++)
+    {
+
       ctx.font = '${Math.round{scaleX / 2}px Arial';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'top';
-
-      var k = Number($(".one").val());
-      $("#slv1").html(k);
-
-      var l = Number($(".two").val());
-      $("#slv2").html(l);
-
-      var m = Number($(".three").val());
-      $("#slv3").html(m);
-
-      var n= Number($(".four").val());
-      $("#slv4").html(n);
-
-      var p = Number($(".five").val());
-      $("#slv5").html(p);
 
 
 
@@ -277,12 +319,44 @@ jQuery("document").ready(function(){ //
     for (let i = 0; i <= canvasPlotWidth; i+=0.01) { // float
       const x = (i - xAxis) / scaleX;
       //const y = k * x + l;
-      const y =  k*Math.sin(l+m*x)+Math.pow(n,x)+Math.exp(p*x);    // формула (радианы)
+      const y =  0.1*k1*Math.sin(0.1*l1+0.1*m1*x)+0.5 * Math.pow(n1,x)+Math.exp(0.1*p1*x * 0.1);    // формула (радианы)
       //const y =  k*Math.sin(l+m*x)+Math.pow(n,x)+Math.exp(p*x);
 
       ctx.fillRect(x*scaleX + xAxis, yAxis - scaleY * y, 4, 4);
     }
     ctx.fillStyle = "#000000";
+
+
+    foo(k1,l1,m1,n1,p1,k2,l2,m2,n2,p2);
+    console.log(k1,l1,m1,n1,p1,k2,l2,m2,n2,p2);
+    await sleep(1000);
+}
+
+    k1 = Number($(".one").val());
+    $("#slv1").html(k1);
+
+    l1 = Number($(".two").val());
+    $("#slv2").html(l1);
+
+    m1 = Number($(".three").val());
+    $("#slv3").html(m1);
+
+    n1= Number($(".four").val());
+    $("#slv4").html(n1);
+
+    p1 = Number($(".five").val());
+    $("#slv5").html(p1);
+
+
+
+
+
+
+
+
+
+
+
 
 
     })

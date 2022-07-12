@@ -5,29 +5,30 @@
     <meta charset="utf-8">
     <link rel = "stylesheet" href="{% static 'anapp/css/style.css' %}">
     <script type="text/javascript" src = "{% static 'anapp/js/jquery-3.6.0.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </script>
-    <title>To Do List</title>
+    <title>Dynamic Chart</title>
       <script type="text/javascript" src="{% static 'anapp/js/scripts.js' %}"></script>
   </head>
   <body>
     <form  action="." id = "first_form" method = "POST"> {% csrf_token %}
 
       <div class = "letter"> k:
-      </div><input class = "par one" type="range" name="slv1" value="0" min = '-5' max = '5'> <div id = "slv1" style = "display:inline;">0</div><br>
+      </div><input class = "par one" type="range" name="slv1" value="0" min = '-50' max = '50'> <div id = "slv1" style = "display:inline;">0</div><br>
 
       <div class = "letter"> l:
-      </div><input class = "par two" type="range" name="slv2" value="0" min = '-5' max = '5'> <div id = "slv2" style = "display:inline;">0</div><br>
+      </div><input class = "par two" type="range" name="slv2" value="0" min = '-50' max = '50'> <div id = "slv2" style = "display:inline;">0</div><br>
 
       <div class = "letter"> m:
-      </div><input class = "par three" type="range" name="slv3" value="0" min = '-5' max = '5'> <div id = "slv3" style = "display:inline;">0</div><br>
+      </div><input class = "par three" type="range" name="slv3" value="0" min = '-50' max = '50'> <div id = "slv3" style = "display:inline;">0</div><br>
 
       <div class = "letter"> n:
-      </div><input class = "par four" type="range" name="slv4" value="0" min = '-5' max = '5'> <div id = "slv4" style = "display:inline;">0</div><br>
+      </div><input class = "par four" type="range" name="slv4" value="0" min = '-50' max = '50'> <div id = "slv4" style = "display:inline;">0</div><br>
 
       <div class = "letter"> p:
-      </div><input class = "par five" type="range" name="slv5" value="0" min = '-5' max = '5'> <div id = "slv5" style = "display:inline;">0</div><br>
+      </div><input class = "par five" type="range" name="slv5" value="0" min = '-50' max = '50'> <div id = "slv5" style = "display:inline;">0</div><br>
 
-      <button type="submit" name="button" id = 'hiddenbutton' style = "width:50px; height:50px; background-color: red; margin:5px; margin-left:100px; display:inline;"></button>
+      <button type="submit" name="button" id = 'hiddenbutton' style = "width:50px; height:50px; background-color: red; margin:5px; margin-left:150px; display:inline;"></button>
 
     </form>
 
@@ -39,7 +40,7 @@
     //  document.getElementById("#first_form").submit();
     //  this.form.submit();
     //  document.forms["#first_form"].submit();
-    });
+    //});
     </script>
       <br>
       <h2 id="formula" style = "margin-left:40%">         y = k*sin(l+m*x) + n^x + e^(p*x) </h2>
@@ -48,7 +49,7 @@
     <canvas id="canvas_plot" width="700" height="700" style = "display:block; background-color: #9ebaa4; margin-left: 32%;"></canvas>
     <br><br>
 
-    <div id="mar" style = "margin-left:47%;">
+    <div id="mar" style = "margin-left:42%;">
     <table border="5" id = "table1">
       {% for item in logs %}
       <tr>
