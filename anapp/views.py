@@ -5,11 +5,17 @@ import array
 # Create your views here.
 
 def show_home(request, *args, **kwargs):
-    Data.objects.create(par1 = request.POST.get("slv1"),
-    par2 = request.POST.get("slv2"),
-    par3 = request.POST.get("slv3"),
-    par4 = request.POST.get("slv4"),
-    par5 = request.POST.get("slv5"))
+    #if ((par1 == request.POST.get("slv1")) and (par2 == request.POST.get("slv2")) and (par3 == request.POST.get("slv3")) and (par4 == request.POST.get("slv4")) and (par5 == request.POST.get("slv5"))):
+    #    pass
+    #elif (request.POST.get("slv1")!=None):
+    if (request.POST.get("slv1")==None):
+        pass
+    else:
+        Data.objects.create(par1 = request.POST.get("slv1"),
+        par2 = request.POST.get("slv2"),
+        par3 = request.POST.get("slv3"),
+        par4 = request.POST.get("slv4"),
+        par5 = request.POST.get("slv5"))
 
     #decimal
     #Data.objects.create(par1 = int(request.POST.get("slv1")),
@@ -22,7 +28,7 @@ def show_home(request, *args, **kwargs):
 
     #Data.objects.create(par1 = request.POST.get("slv1")); #, par2 = ...
     # через форму:
-    logs = Data.objects.all()[len(Data.objects.all())-20:len(Data.objects.all())]
+    logs = Data.objects.all()[len(Data.objects.all())-50:len(Data.objects.all())]
     logs = reversed(logs)
 
     var = request.POST

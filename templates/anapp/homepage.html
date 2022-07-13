@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link rel = "stylesheet" href="{% static 'anapp/css/style.css' %}">
     <script type="text/javascript" src = "{% static 'anapp/js/jquery-3.6.0.js' %}"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     </script>
     <title>Dynamic Chart</title>
       <script type="text/javascript" src="{% static 'anapp/js/scripts.js' %}"></script>
@@ -53,6 +53,7 @@
     <table border="5" id = "table1">
       {% for item in logs %}
       <tr>
+        <td id = "primary_key" style = "background-color:orange;">{{item.pk}}</td>
         <td>{{item.par1}}</td>
         <td>{{item.par2}}</td>
         <td>{{item.par3}}</td>
