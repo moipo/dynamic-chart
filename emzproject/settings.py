@@ -31,10 +31,10 @@ ALLOWED_HOSTS = ['*'] #https://moipo.pythonanywhere.com/
 #Additionally, if DEBUG=True, host validation is disabled. In other words, if DEBUG=False, ALLOWED_HOSTS needs to be set.
 # allowed hosts использует меньшее множество.
 
-CORS_ALLOWED_ORIGINS = [
-    "*",
-]
-
+# CORS_ALLOWED_ORIGINS = [
+#     "*",
+# ]
+CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
 
 INSTALLED_APPS = [
