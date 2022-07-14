@@ -3,4 +3,5 @@ from . import views #чтобы мочь связывать url с нашими 
 
 urlpatterns = [
     path('', views.show_home, name = 'home'),
+    path('get_data/', views.get_data, name = 'get_data'),
 ]

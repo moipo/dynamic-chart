@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Data
 import array
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -51,3 +52,16 @@ def show_home(request, *args, **kwargs):
         #"par1": request.POST,
     }
     return render(request, "homepage.html", context)
+
+
+
+def get_data(request, *args, **kwargs):
+    id_received = request.GET.get("received_id")
+    obj = Data.objects.get(id = id_received)
+    return JsonResponse({
+    "p1" : obj.par1,
+    "p2" : obj.par2,
+    "p3" : obj.par3,
+    "p4" : obj.par4,
+    "p5" : obj.par5,
+    })

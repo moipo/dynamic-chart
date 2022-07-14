@@ -12,87 +12,14 @@ jQuery("document").ready(function(){ //
   var n2;
   var p2;
 
-//  $('body').append('<a href="http://google.com">Перейти в гугл</a>');
-  //$('p').remove();
-//  var a;
-//  a = $('p').clone();
-//  alert(a)
-  //$("#first_row").on("change", function(){
-    //var ans = Number($("#first_row").val()) + Number($("#second_row").val());
-    //$("#answer").html($("#first_row").val());
-    //alert($("#first_row").val());
-  //$("#buttoncreatetask").on("click", function(){
-  //  $(".task").clone().insertAfter(this);
-
-  // $("#first_row").change(function(){
-  //   var a = $("#first_row").val()
-  //     if (a > 50){
-  //       alert("значение больше 50")
-  //     } else if (a < 50) {
-  //       alert("значение меньше 50")
-  //     }
-  //a = $.ajax('https://api.vk.com/method/wall.get?access_token=3e2b6e7d3e2b6e7d3e2b6e7dff3e567fa533e2b3e2b6e7d5c87d522c6655600d3791d18&v=5.131&domain=mem_archive');
-
-  // setTimeout(function(){
-  //    $("#answer").html('8');
-  // },10);
-  // setTimeout(function(){
-  //    $("#answer").html('6');
-  // },20);
-  // setTimeout(function(){
-  //    $("#answer").html('32');
-  // },2000);
-  // setTimeout(function(){
-  //    $("#answer").html('53');
-  // },4000);
 
 
-  //    $(".task").clone().insertAfter(".task");
-  // },500);
-  // setTimeout(function(){
-  //    $(".task").clone().insertAfter(".task");
-  // },2000);
-  // setTimeout(function(){
-  //    $(".task").clone().insertAfter(".task");
-  // },4000);
-  // $("#is").on("change",function(){
-  //   alert(5);
-  //   //$(".par one").append($(".par one").val());
-  // })
-  // $(".two").on("change",function(){
-  //   $(".two").html('32');
-  //   alert($(".two").val());
-  //   //$(".two").html($(".two").val());
-  //
-  //
-  // })
-
-
-
-//  $(".two").on("change",function(){
-//    $("#slv2").html($(".two").val());
-//  })
-
-
-
-  //$(".par").on("change",function(){
-
-//  })
 
 
   var
     canvasPlot = document.getElementById('canvas_plot'),
     ctx = canvasPlot.getContext('2d');
 
-    //code
-
-   // ctx.fillStyle = 'orange';
-   // var x = 50, y = 50;
-   // ctx.fillRect(50,50,300,200) //позиции по x y (y идёт вниз в кэнве), длина , ширина.
-   //
-   // setInterval(function(){
-   //   ctx.fillRect(x++,y++,300,200);
-   // }, 5);
 
 
 
@@ -157,21 +84,10 @@ jQuery("document").ready(function(){ //
     ctx.closePath();
 
 
-  //   for (let i = 0; i <= canvasPlotWidth; i+=0.01) { // float
-  //     const x = (i - xAxis) / scaleX;
-  //     const y =  2*Math.sin(3.54+0.5*x)+Math.pow(1.1,x)+Math.exp(0.1*x);    // формула (радианы)
-  //   ctx.fillRect(x*scaleX + xAxis, yAxis - scaleY * y, 4, 4);
-  // }
 
     $(".par").on("change",async function(){
 
 
-    //    ctx.fillStyle = "#9ebaa4"; // цвет внутри форм
-    //    ctx.fillRect(0, 0, canvasPlotWidth, canvasPlotHeight);
-      //  ctx.fillStyle = "#9ebaa4";
-    //  ctx.stroke();
-    //  ctx.closePath();
-    //  document.getElementById("canvas_plot").style.property.background = "#000000";
 
       k2 = Number($(".one").val());
       $("#slv1").html(k2);
@@ -225,30 +141,6 @@ jQuery("document").ready(function(){ //
 
 
 
-      // document.getElementById("first_form").submit();
-      // document.getElementTagName("first_form").submit();
-      // document.getElementById("#first_form").submit();
-      // document.getElementTagName("#first_form").submit();
-      // document.form.submit()
-      // document.getElementById("first_form").submit();
-      // document.getElementById("hiddenbutton").click();
-      // document.getElementById("#hiddenbutton").click();
-      // this.form.submit();
-      // $('input[type=submit]').hide();
-      //
-      //
-      // const first_form = document.ElementById("first_form");
-      // myForm.addEventListener("change", function(){
-      //   document.getElementById("first_form").submit();
-      //   document.getElementTagName("first_form").submit();
-      //   document.getElementById("#first_form").submit();
-      //   document.getElementTagName("#first_form").submit();
-      //   document.form.submit()
-      //   document.getElementById("first_form").submit();
-      //   document.getElementById("hiddenbutton").click();
-      //   document.getElementById("#hiddenbutton").click();
-      //   this.form.submit();
-      // });
 
 
       ctx.beginPath();
@@ -257,19 +149,8 @@ jQuery("document").ready(function(){ //
       ctx.stroke();
       ctx.closePath();
 
-      //рисуем сетку
-      //document.getElementById("canvas_plot").style.property.background-color = "blue";
-
-    //  $("#canvas_plot").clone().insertAfter(this);
-
-    //  a = $("#canvas_plot").clone();
-    //  $('#canvas_plot').remove();
-    //  $('.five').append('a')
-      //a.insertAfter(this)
-
 
       ctx.beginPath();
-    //  ctx.moveTo(0, 0);
       ctx.strokeStyle = '#f5f0e8'; //цвет сетки
 
       for (let i = 0; i <= canvasPlotWidth; i = i + scaleX){
@@ -347,18 +228,6 @@ jQuery("document").ready(function(){ //
     p1 = Number($(".five").val());
     $("#slv5").html(p1);
 
-
-
-
-
-
-
-
-
-
-
-
-
     })
 
 
@@ -367,22 +236,194 @@ jQuery("document").ready(function(){ //
 
 
 
-    //
-    // const first_form = document.ElementById("first_form");
-    // myForm.addEventListener("change", function(){
-    //   document.getElementById("first_form").submit();
-    //   document.getElementTagName("first_form").submit();
-    //   document.getElementById("#first_form").submit();
-    //   document.getElementTagName("#first_form").submit();
-    //   document.form.submit()
-    //   document.getElementById("first_form").submit();
-    //   document.getElementById("hiddenbutton").click();
-    //   document.getElementById("#hiddenbutton").click();
-    //   this.form.submit();
-    // });
-    //
 
 
+
+
+
+
+
+
+
+
+
+
+async function myfunc()
+{
+  k2 = Number($(".one").val());
+  $("#slv1").html(k2);
+
+  l2 = Number($(".two").val());
+  $("#slv2").html(l2);
+
+  m2 = Number($(".three").val());
+  $("#slv3").html(m2);
+
+  n2= Number($(".four").val());
+  $("#slv4").html(n2);
+
+  p2 = Number($(".five").val());
+  $("#slv5").html(p2);
+
+
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  function compare_and_change_locally(a,b)
+  {
+    if (a < b)
+    {
+        a += 1
+    }
+    else if (a > b)
+    {
+      a -= 1;
+    }
+    return a;
+  }
+
+  function foo(k1_f,l1_f,m1_f,n1_f,p1_f,k2,l2,m2,n2,p2)
+  {
+  k1 = compare_and_change_locally(k1_f,k2);
+  l1 = compare_and_change_locally(l1_f,l2);
+  m1 = compare_and_change_locally(m1_f,m2);
+  n1 = compare_and_change_locally(n1_f,n2);
+  p1 = compare_and_change_locally(p1_f,p2);
+  }
+
+  for (let i = 0; i < 100+1; i++)
+  {
+
+  ctx.font = '${Math.round{scaleX / 2}px Arial';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'top';
+
+
+
+
+
+  ctx.beginPath();
+  ctx.fillStyle = '#9ebaa4'; // ничего
+  ctx.fillRect(0, 0, canvasPlotWidth, canvasPlotHeight);
+  ctx.stroke();
+  ctx.closePath();
+
+
+  ctx.beginPath();
+  ctx.strokeStyle = '#f5f0e8'; //цвет сетки
+
+  for (let i = 0; i <= canvasPlotWidth; i = i + scaleX){
+    ctx.moveTo(i, 0);
+    ctx.lineTo(i, canvasPlotHeight);
+    ctx.fillStyle = "#000000"
+    ctx.fillText((i-xAxis) / scaleX, i + shiftNames, yAxis + shiftNames);
+  }
+
+  for (let i = 0; i <= canvasPlotHeight; i= i + scaleY) {
+    ctx.moveTo(0, i);
+    ctx.lineTo(canvasPlotWidth, i);
+
+    ctx.fillText((yAxis-i) / scaleY, xAxis + shiftNames, i + shiftNames);
+  }
+  ctx.fillStyle = "#9ebaa4"
+  //console.log(canvasPlotWidth, canvasPlotHeight);
+  ctx.stroke();
+  ctx.closePath();
+
+
+
+
+  //Рисуем главные оси
+
+  ctx.beginPath();
+  ctx.strokeStyle = '#000000'; // цвет линий
+  ctx.moveTo(xAxis, 0);
+  ctx.lineTo(xAxis, canvasPlotHeight);
+  ctx.fillStyle = "#000000"
+  ctx.fillText('y', xAxis+20, 0)
+
+  ctx.moveTo(0, yAxis);
+  ctx.lineTo(canvasPlotWidth, yAxis);
+  ctx.fillText('x', canvasPlotWidth-20, yAxis-20);
+  ctx.fillStyle = "#9ebaa4"
+
+  ctx.stroke();
+  ctx.closePath();
+
+
+
+
+  // strokestyle != fillstyle. График и фон одного цвета т.к. прямоугольники
+  ctx.fillStyle = "#FF0000";
+
+  for (let i = 0; i <= canvasPlotWidth; i+=0.01) { // float
+  const x = (i - xAxis) / scaleX;
+  //const y = k * x + l;
+  const y =  0.1*k1*Math.sin(0.1*l1+0.1*m1*x)+0.5 * Math.pow(n1,x)+Math.exp(0.1*p1*x * 0.1);    // формула (радианы)
+  //const y =  k*Math.sin(l+m*x)+Math.pow(n,x)+Math.exp(p*x);
+
+  ctx.fillRect(x*scaleX + xAxis, yAxis - scaleY * y, 4, 4);
+  }
+  ctx.fillStyle = "#000000";
+
+
+  foo(k1,l1,m1,n1,p1,k2,l2,m2,n2,p2);
+  console.log(k1,l1,m1,n1,p1,k2,l2,m2,n2,p2);
+  await sleep(1000);
+  }
+
+  k1 = Number($(".one").val());
+  $("#slv1").html(k1);
+
+  l1 = Number($(".two").val());
+  $("#slv2").html(l1);
+
+  m1 = Number($(".three").val());
+  $("#slv3").html(m1);
+
+  n1= Number($(".four").val());
+  $("#slv4").html(n1);
+
+  p1 = Number($(".five").val());
+  $("#slv5").html(p1);
+}
+
+
+
+
+
+
+
+
+    $("#pk_submit").click( function(){
+
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      console.log("the button was clicked")
+      $.ajax({
+        url: "http://127.0.0.1:8000/get_data/",
+        type : 'get',
+        data : {received_id : Number($("#received_id").val())},
+        success : async function(response){
+          //console.log(response.key)
+          console.log(response.p1,response.p2,response.p3,response.p4,response.p5);
+          //var range1 = document.getElementById("#slv1");
+          //range1.value = 25;
+          //document.getElementById("#slv1").value = 25;
+          await sleep(1000)
+          document.querySelector('input[name="slv1"]').value = response.p1;
+          document.querySelector('input[name="slv2"]').value = response.p2;
+          document.querySelector('input[name="slv3"]').value = response.p3;
+          document.querySelector('input[name="slv4"]').value = response.p4;
+          document.querySelector('input[name="slv5"]').value = response.p5;
+          myfunc();
+        }
+      })
+    })
 
 
 

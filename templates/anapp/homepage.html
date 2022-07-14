@@ -12,7 +12,7 @@
   </head>
   <body>
     <form  action="." id = "first_form" method = "POST"> {% csrf_token %}
-
+      <!-- если оставляем action как . , то переходим на ту же ссылку -->
       <div class = "letter"> k:
       </div><input class = "par one" type="range" name="slv1" value="0" min = '-50' max = '50'> <div id = "slv1" style = "display:inline;">0</div><br>
 
@@ -44,7 +44,11 @@
     </script>
       <br>
       <h2 id="formula" style = "margin-left:40%">         y = k*sin(l+m*x) + n^x + e^(p*x) </h2>
-
+      <br>
+      <form method = 'GET'>
+        <input type="number" name="received_id" id = "received_id" value="216" style = "margin-left:45%;">
+        <button type="button" id = "pk_submit" value="216" style = "width:40px; height:30px; background-color: purple; margin:5px; margin-left:50px;" name="pk_sumbit"></button>
+      </form>
     <br><br>
     <canvas id="canvas_plot" width="700" height="700" style = "display:block; background-color: #9ebaa4; margin-left: 32%;"></canvas>
     <br><br>
