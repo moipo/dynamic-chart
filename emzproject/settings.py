@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k007u^v7@z)+&8)@ksdfsi@y9615nt-q8e-8%ha7)%+ugx&e^l^!lfs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.pythonanywhere.com'] #https://moipo.pythonanywhere.com/
+ALLOWED_HOSTS = ['*'] #https://moipo.pythonanywhere.com/
+#'.pythonanywhere.com'
 #какому домену можно отвечать http ответом (html Не входит)
 #Additionally, if DEBUG=True, host validation is disabled. In other words, if DEBUG=False, ALLOWED_HOSTS needs to be set.
 # allowed hosts использует меньшее множество.
