@@ -31,6 +31,10 @@ ALLOWED_HOSTS = ['*'] #https://moipo.pythonanywhere.com/
 #Additionally, if DEBUG=True, host validation is disabled. In other words, if DEBUG=False, ALLOWED_HOSTS needs to be set.
 # allowed hosts использует меньшее множество.
 
+CORS_ALLOWED_ORIGINS = [
+    "*",
+]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -120,6 +124,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
