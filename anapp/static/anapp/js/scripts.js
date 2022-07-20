@@ -371,7 +371,7 @@ async function myfunc()
 
   foo(k1,l1,m1,n1,p1,k2,l2,m2,n2,p2);
   console.log(k1,l1,m1,n1,p1,k2,l2,m2,n2,p2);
-  await sleep(1000);
+  await sleep(100);
   }
 
   k1 = Number($(".one").val());
@@ -404,16 +404,12 @@ async function myfunc()
       }
 
       console.log("the button was clicked")
-      $.ajax({
-        url: "http://127.0.0.1:8000/get_data/",
-        type : 'get',
-        data : {received_id : Number($("#received_id").val())},
+      $.ajax({ // ajax запрос отсылается на конкретный сервер, что не удобно, т.к. мы не знаем домен
+        url: "/get_data",   // надо было писать url : "/get_data"
+        type : 'get',  // для post Запроса необходимо передавать csrf token
+        data : {received_id : Number($("#received_id").val()), csrfmiddlewaretoken: '{{ csrf_token }}'},
         success : async function(response){
-          //console.log(response.key)
           console.log(response.p1,response.p2,response.p3,response.p4,response.p5);
-          //var range1 = document.getElementById("#slv1");
-          //range1.value = 25;
-          //document.getElementById("#slv1").value = 25;
           await sleep(1000)
           document.querySelector('input[name="slv1"]').value = response.p1;
           document.querySelector('input[name="slv2"]').value = response.p2;
