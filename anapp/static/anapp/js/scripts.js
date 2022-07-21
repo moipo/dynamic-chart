@@ -12,7 +12,11 @@ jQuery("document").ready(function(){ //
   var n2;
   var p2;
 
-
+  var rsk;
+  var rsl;
+  var rsm;   //remember state
+  var rsn;
+  var rsp;
 
 
 
@@ -210,7 +214,11 @@ jQuery("document").ready(function(){ //
 
     foo(k1,l1,m1,n1,p1,k2,l2,m2,n2,p2);
     console.log(k1,l1,m1,n1,p1,k2,l2,m2,n2,p2);
-    await sleep(1000);
+    if ( k1 == k2 && l1 == l2 && m1 == m2 && n1 == n2 && p1 == p2)
+    {
+      break;
+    }
+    await sleep(40);
 }
 
     k1 = Number($(".one").val());
@@ -371,7 +379,12 @@ async function myfunc()
 
   foo(k1,l1,m1,n1,p1,k2,l2,m2,n2,p2);
   console.log(k1,l1,m1,n1,p1,k2,l2,m2,n2,p2);
-  await sleep(100);
+  if ( k1 == k2 && l1 == l2 && m1 == m2 && n1 == n2 && p1 == p2)
+  {
+    break;
+  }
+
+  await sleep(10);
   }
 
   k1 = Number($(".one").val());
@@ -405,12 +418,12 @@ async function myfunc()
 
       console.log("the button was clicked")
       $.ajax({ // ajax запрос отсылается на конкретный сервер, что не удобно, т.к. мы не знаем домен
-        url: "/get_data",   // надо было писать url : "/get_data"
-        type : 'get',  // для post Запроса необходимо передавать csrf token
+        url: "/get_data",   // надо было писать url : "/get_data", а не полный адрес с доменом и протоколом.
+        type : 'get',  // для И для get И для post Запроса необходимо передавать csrf token
         data : {received_id : Number($("#received_id").val()), csrfmiddlewaretoken: '{{ csrf_token }}'},
         success : async function(response){
           console.log(response.p1,response.p2,response.p3,response.p4,response.p5);
-          await sleep(1000)
+          //await sleep(100)
           document.querySelector('input[name="slv1"]').value = response.p1;
           document.querySelector('input[name="slv2"]').value = response.p2;
           document.querySelector('input[name="slv3"]').value = response.p3;
