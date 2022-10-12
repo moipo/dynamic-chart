@@ -7,7 +7,7 @@ from django.http import JsonResponse
 def show_home(request, *args, **kwargs):
     context = {}
 
-    if (request.method=="POST"):
+    if (request.method=="GET"):
         pass
     else:
         Data.objects.create(par1 = request.POST.get("slv1"),
@@ -16,16 +16,17 @@ def show_home(request, *args, **kwargs):
         par4 = request.POST.get("slv4"),
         par5 = request.POST.get("slv5"))
 
-    logs = Data.objects.all()[len(Data.objects.all())-50:len(Data.objects.all())]
-    logs = reversed(logs)
 
-    var = request.POST
-    context = {
-        "par1_test" : var,
-        "par1_db": Data.objects.get(id=(len(Data.objects.all()))).par2, 
-        "logs" : logs,
+    try:
+        logs = Data.objects.all()[len(Data.objects.all())-50:len(Data.objects.all())]
+        logs = reversed(logs)
 
-    }
+        context = {
+            "par1_db": Data.objects.get(id=(len(Data.objects.all()))).par2,
+            "logs" : logs,
+
+        }
+    except: pass;
     return render(request, "homepage.html", context)
 
 
