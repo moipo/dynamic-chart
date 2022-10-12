@@ -5,14 +5,13 @@
     <meta charset="utf-8">
     <link rel = "stylesheet" href="{% static 'anapp/css/style.css' %}">
     <script type="text/javascript" src = "{% static 'anapp/js/jquery-3.6.0.js' %}"></script>
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     </script>
     <title>Dynamic Chart</title>
       <script type="text/javascript" src="{% static 'anapp/js/scripts.js' %}"></script>
+
   </head>
   <body>
     <form  action="." id = "first_form" method = "POST"> {% csrf_token %}
-      <!-- если оставляем action как . , то переходим на ту же ссылку -->
       <div class = "letter"> k:
       </div><input class = "par one" type="range" name="slv1" value="0" min = '-50' max = '50'> <div id = "slv1" style = "display:inline;">0</div><br>
 
@@ -32,16 +31,6 @@
 
     </form>
 
-    <script>
-  //  var auto_refresh = setInterval(function() { submitform(); }, 10000);
-  //  $("#first_form").on("change",function submitform()
-  //  {
-  //    alert('test');
-    //  document.getElementById("#first_form").submit();
-    //  this.form.submit();
-    //  document.forms["#first_form"].submit();
-    //});
-    </script>
       <br>
       <h2 id="formula" style = "margin-left:40%">         y = k*sin(l+m*x) + n^x + e^(p*x) </h2>
       <br>
@@ -68,14 +57,6 @@
     </table>
   </div>
 
-
-      <!--
-    <div id = "table1">
-    {% for item in logs %}
-      | {{item.par1}} | {{item.par2}} | {{item.par3}} | {{item.par4}} | {{item.par5}} | <br>
-    {% endfor %}
-    </div>
-    -->
 
 
   </body>

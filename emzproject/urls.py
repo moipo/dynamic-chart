@@ -20,5 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('anapp.urls')),
     path('get_data/', include('anapp.urls')),
-
 ]

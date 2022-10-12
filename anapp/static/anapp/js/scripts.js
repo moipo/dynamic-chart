@@ -1,44 +1,26 @@
- //$('body').append('<a ref="http://google.com">Перейти в гугл</a>');
-jQuery("document").ready(function(){ //
+jQuery("document").ready(function(){
   var k1 = 0;
   var l1 = 0;
   var m1 = 0;
   var n1 = 0;
   var p1 = 0;
 
-  var k2;
-  var l2;
-  var m2;
-  var n2;
-  var p2;
+  var k2,l2,m2,n2,p2;
 
-  var rsk;
-  var rsl;
-  var rsm;   //remember state
-  var rsn;
-  var rsp;
-
-
+  var rsk , rsl , rsm , rsn, rsp;
 
   var
     canvasPlot = document.getElementById('canvas_plot'),
     ctx = canvasPlot.getContext('2d');
 
 
-
-
-
-
-
-
-
     const canvasPlotWidth = canvasPlot.clientWidth;
     const canvasPlotHeight = canvasPlot.clientHeight;
 
-  //  console.log(canvasPlotWidth, canvasPlotHeight);
 
-    const scaleX = 20;    //масштаб в минус
-    const scaleY = 20;    //
+
+    const scaleX = 20;
+    const scaleY = 20;
     const shiftNames = 5;
 
     const xAxis = Math.round(canvasPlotWidth / scaleX / 2) * scaleX;
@@ -48,7 +30,8 @@ jQuery("document").ready(function(){ //
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
 
-    //рисуем сетку
+
+    //grid
     ctx.beginPath();
     ctx.strokeStyle = '#f5f0e8';
 
@@ -65,15 +48,14 @@ jQuery("document").ready(function(){ //
 
       ctx.fillText((yAxis-i) / scaleY, xAxis + shiftNames, i + shiftNames);
     }
-    //console.log(canvasPlotWidth, canvasPlotHeight);
+
     ctx.stroke();
     ctx.closePath();
 
 
 
 
-    //Рисуем главные оси
-
+    //axes
     ctx.beginPath();
     ctx.strokeStyle = '#000000';
     ctx.moveTo(xAxis, 0);
@@ -148,14 +130,14 @@ jQuery("document").ready(function(){ //
 
 
       ctx.beginPath();
-      ctx.fillStyle = '#9ebaa4'; // ничего
+      ctx.fillStyle = '#9ebaa4';
       ctx.fillRect(0, 0, canvasPlotWidth, canvasPlotHeight);
       ctx.stroke();
       ctx.closePath();
 
 
       ctx.beginPath();
-      ctx.strokeStyle = '#f5f0e8'; //цвет сетки
+      ctx.strokeStyle = '#f5f0e8'; //grid color
 
       for (let i = 0; i <= canvasPlotWidth; i = i + scaleX){
         ctx.moveTo(i, 0);
@@ -171,7 +153,6 @@ jQuery("document").ready(function(){ //
         ctx.fillText((yAxis-i) / scaleY, xAxis + shiftNames, i + shiftNames);
       }
       ctx.fillStyle = "#9ebaa4"
-      //console.log(canvasPlotWidth, canvasPlotHeight);
       ctx.stroke();
       ctx.closePath();
 
@@ -198,15 +179,12 @@ jQuery("document").ready(function(){ //
 
 
 
-      // strokestyle != fillstyle. График и фон одного цвета т.к. прямоугольники
+
       ctx.fillStyle = "#FF0000";
 
-    for (let i = 0; i <= canvasPlotWidth; i+=0.01) { // float
+    for (let i = 0; i <= canvasPlotWidth; i+=0.01) {
       const x = (i - xAxis) / scaleX;
-      //const y = k * x + l;
-      const y =  0.1*k1*Math.sin(0.1*l1+0.1*m1*x)+0.5 * Math.pow(n1,x)+Math.exp(0.1*p1*x * 0.1);    // формула (радианы)
-      //const y =  k*Math.sin(l+m*x)+Math.pow(n,x)+Math.exp(p*x);
-
+      const y =  0.1*k1*Math.sin(0.1*l1+0.1*m1*x)+0.5 * Math.pow(n1,x)+Math.exp(0.1*p1*x * 0.1);
       ctx.fillRect(x*scaleX + xAxis, yAxis - scaleY * y, 4, 4);
     }
     ctx.fillStyle = "#000000";
@@ -237,22 +215,6 @@ jQuery("document").ready(function(){ //
     $("#slv5").html(p1);
 
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -313,14 +275,14 @@ async function myfunc()
 
 
   ctx.beginPath();
-  ctx.fillStyle = '#9ebaa4'; // ничего
+  ctx.fillStyle = '#9ebaa4';
   ctx.fillRect(0, 0, canvasPlotWidth, canvasPlotHeight);
   ctx.stroke();
   ctx.closePath();
 
 
   ctx.beginPath();
-  ctx.strokeStyle = '#f5f0e8'; //цвет сетки
+  ctx.strokeStyle = '#f5f0e8';
 
   for (let i = 0; i <= canvasPlotWidth; i = i + scaleX){
     ctx.moveTo(i, 0);
@@ -336,17 +298,12 @@ async function myfunc()
     ctx.fillText((yAxis-i) / scaleY, xAxis + shiftNames, i + shiftNames);
   }
   ctx.fillStyle = "#9ebaa4"
-  //console.log(canvasPlotWidth, canvasPlotHeight);
   ctx.stroke();
   ctx.closePath();
 
 
-
-
-  //Рисуем главные оси
-
   ctx.beginPath();
-  ctx.strokeStyle = '#000000'; // цвет линий
+  ctx.strokeStyle = '#000000';
   ctx.moveTo(xAxis, 0);
   ctx.lineTo(xAxis, canvasPlotHeight);
   ctx.fillStyle = "#000000"
@@ -363,14 +320,12 @@ async function myfunc()
 
 
 
-  // strokestyle != fillstyle. График и фон одного цвета т.к. прямоугольники
   ctx.fillStyle = "#FF0000";
 
-  for (let i = 0; i <= canvasPlotWidth; i+=0.01) { // float
+  for (let i = 0; i <= canvasPlotWidth; i+=0.01) {
   const x = (i - xAxis) / scaleX;
-  //const y = k * x + l;
-  const y =  0.1*k1*Math.sin(0.1*l1+0.1*m1*x)+0.5 * Math.pow(n1,x)+Math.exp(0.1*p1*x * 0.1);    // формула (радианы)
-  //const y =  k*Math.sin(l+m*x)+Math.pow(n,x)+Math.exp(p*x);
+  const y =  0.1*k1*Math.sin(0.1*l1+0.1*m1*x)+0.5 * Math.pow(n1,x)+Math.exp(0.1*p1*x * 0.1);
+
 
   ctx.fillRect(x*scaleX + xAxis, yAxis - scaleY * y, 4, 4);
   }
@@ -417,13 +372,12 @@ async function myfunc()
       }
 
       console.log("the button was clicked")
-      $.ajax({ // ajax запрос отсылается на конкретный сервер, что не удобно, т.к. мы не знаем домен
-        url: "/get_data",   // надо было писать url : "/get_data", а не полный адрес с доменом и протоколом.
-        type : 'get',  // для И для get И для post Запроса необходимо передавать csrf token
+      $.ajax({
+        url: "/get_data",
+        type : 'get',
         data : {received_id : Number($("#received_id").val()), csrfmiddlewaretoken: '{{ csrf_token }}'},
         success : async function(response){
           console.log(response.p1,response.p2,response.p3,response.p4,response.p5);
-          //await sleep(100)
           document.querySelector('input[name="slv1"]').value = response.p1;
           document.querySelector('input[name="slv2"]').value = response.p2;
           document.querySelector('input[name="slv3"]').value = response.p3;
@@ -434,13 +388,4 @@ async function myfunc()
       })
     })
 
-
-
-
-
-
-
-
-
-
-});     //
+});
